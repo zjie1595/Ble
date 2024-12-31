@@ -1,19 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
-    id "com.vanniktech.maven.publish" version "0.30.0"
-}
-
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.zj'
-                artifactId = 'ble'
-                version = '1.0.0'
-            }
-        }
-    }
+    id "maven-publish"
 }
 
 android {
@@ -22,6 +9,8 @@ android {
 
     defaultConfig {
         minSdk 21
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk 28
 
         consumerProguardFiles "consumer-rules.pro"
     }
