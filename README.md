@@ -77,19 +77,3 @@ BleUtils.checkWeldJointNumber()
 BleUtils.getWeldJointInfo()
 ```
 
-# 处理焊机通知
-
-```java
-BleUtils.setNotifyListener(new BleUtils.Callback() {
-	@Override
-	public void takePhoto(DecodeBean decodeBean) {
-	// 焊机请求拍照
-	}
-
-	@Override
-	public void weldingFinish(DecodeBean decodeBean) {
-	// 焊接完成
-	}
-});
-```
-
