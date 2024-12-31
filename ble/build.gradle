@@ -3,6 +3,14 @@ plugins {
     id "maven-publish"
 }
 
+publishing {
+    publications {
+        release(MavenPublication) {
+            from components.release
+        }
+    }
+}
+
 android {
     namespace 'com.zj.ble'
     compileSdk 35
