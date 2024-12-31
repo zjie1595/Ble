@@ -3,10 +3,15 @@ plugins {
     id "maven-publish"
 }
 
-publishing {
-    publications {
-        release(MavenPublication) {
-            from components.release
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.zj'
+                artifactId = 'ble'
+                version = '1.0.0'
+            }
         }
     }
 }
