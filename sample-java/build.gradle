@@ -4,12 +4,13 @@ plugins {
 
 android {
     namespace 'com.hydrau.sample_java'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.hydrau.sample_java"
         minSdk 21
-        targetSdk 34
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk 28
         versionCode 1
         versionName "1.0"
 
