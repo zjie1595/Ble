@@ -1,17 +1,5 @@
 plugins {
     alias(libs.plugins.android.library)
-    id 'maven-publish'
-}
-
-afterEvaluate {
-    android.libraryVariants.each {variant->
-        publishing.publications.create(variant.name,MavenPublication){
-            from components.findByName(variant.name)
-            groupId = 'com.zj'//自定义
-            artifactId = 'ble'//自定义
-            version = '1.0.0'//自定义
-        }
-    }
 }
 
 android {

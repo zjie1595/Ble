@@ -1,2 +1,12 @@
 jdk:
   - openjdk17
+
+android:
+  build: true
+
+build:
+  gradle:
+    tasks:
+      - :ble:bundleReleaseAar
+  outputs:
+    - path: ble/build/outputs/aar/ble-release.aar
