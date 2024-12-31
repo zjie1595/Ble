@@ -1,5 +1,6 @@
 [versions]
 agp = "8.6.1"
+brv = "1.6.1"
 fastble = "2.4.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -15,8 +16,10 @@ activityCompose = "1.9.3"
 composeBom = "2024.12.01"
 spiderman = "v1.2.0"
 utilcodex = "1.31.1"
+xpopup = "2.10.0"
 
 [libraries]
+brv = { module = "com.github.liangjingkanji:BRV", version.ref = "brv" }
 fastble = { module = "com.github.Jasonchenlijian:FastBle", version.ref = "fastble" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -39,6 +42,7 @@ ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
 utilcodex = { module = "com.blankj:utilcodex", version.ref = "utilcodex" }
+xpopup = { module = "com.github.li-xiaojun:XPopup", version.ref = "xpopup" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

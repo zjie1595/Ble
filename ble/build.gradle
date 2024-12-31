@@ -26,6 +26,6 @@ android {
 }
 
 dependencies {
-    compileOnly libs.appcompat
-    compileOnly libs.utilcodex
+    implementation libs.appcompat
+    implementation libs.utilcodex
 }
