@@ -60,14 +60,19 @@ BleUtils.onWeldNumberVerification(new CmdParseExecute.CheckSpotNoListener() {
 ```java
 // 获取焊机信息
 BleUtils.getWelderInformation()
+    
 // 授权人员信息
 BleUtils.checkOperatorInfo()
+    
 // 拍照完成信息
 BleUtils.checkOperatorInfo()
+    
 // 授权工程信息
 BleUtils.checkProjectInfo()
+    
 // 焊口编号验证
 BleUtils.checkWeldJointNumber()
+    
 // 获取焊口焊接信息
 BleUtils.getWeldJointInfo()
 ```
