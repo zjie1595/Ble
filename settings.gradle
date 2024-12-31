@@ -16,6 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Ble"
 include ':ble'
-include ':sample-kt'
-include ':sample-compose'
-include ':sample-java'
+include ':sample'
