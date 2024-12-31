@@ -63,7 +63,7 @@ dependencies {
     implementation libs.ui.graphics
     implementation libs.ui.tooling.preview
     implementation libs.material3
-    implementation project(':ble')
+
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
@@ -76,4 +76,6 @@ dependencies {
     implementation libs.utilcodex
     implementation libs.fastble
     debugImplementation libs.spiderman
+
+    implementation project(':ble')
 }
