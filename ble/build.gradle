@@ -3,6 +3,20 @@ plugins {
     id 'maven-publish'
 }
 
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.zj'
+            artifactId = 'ble'
+            version = '1.0.0'
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
+}
+
 android {
     namespace 'com.zj.ble'
     compileSdk 35
@@ -36,18 +50,4 @@ android {
 dependencies {
     implementation libs.appcompat
     implementation libs.utilcodex
-}
-
-publishing {
-    publications {
-        release(MavenPublication) {
-            groupId = 'com.zj'
-            artifactId = 'ble'
-            version = '1.0'
-
-            afterEvaluate {
-                from components.release
-            }
-        }
-    }
 }

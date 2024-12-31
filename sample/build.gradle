@@ -63,6 +63,7 @@ dependencies {
     implementation libs.ui.graphics
     implementation libs.ui.tooling.preview
     implementation libs.material3
+    implementation project(':ble')
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
@@ -70,8 +71,6 @@ dependencies {
     androidTestImplementation libs.ui.test.junit4
     debugImplementation libs.ui.tooling
     debugImplementation libs.ui.test.manifest
-
-    implementation 'com.github.zjie1595:Ble:1.1.1'
 
     implementation libs.lifecycle.viewmodel.compose
     implementation libs.utilcodex
