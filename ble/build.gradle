@@ -3,6 +3,19 @@ plugins {
     id "com.vanniktech.maven.publish" version "0.30.0"
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.zj'
+                artifactId = 'ble'
+                version = '1.0.0'
+            }
+        }
+    }
+}
+
 android {
     namespace 'com.zj.ble'
     compileSdk 28
