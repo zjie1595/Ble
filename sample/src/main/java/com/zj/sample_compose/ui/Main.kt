@@ -177,8 +177,8 @@ private fun LazyGridScope.editItem(
             OutlinedTextField(
                 value = value,
                 onValueChange = onValueChange,
-                supportingText = {
-                    if (supportingText != null) {
+                supportingText = if (supportingText == null) null else {
+                    {
                         Text(supportingText)
                     }
                 }
