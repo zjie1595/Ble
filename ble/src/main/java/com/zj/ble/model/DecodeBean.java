@@ -7,6 +7,9 @@ import java.util.Arrays;
  */
 
 public class DecodeBean {
+      /**
+     * 焊机回调类型
+     */
     public int status = 0; //0 success   1 error   2 notify
     public byte cmd;
     public byte[] data;
