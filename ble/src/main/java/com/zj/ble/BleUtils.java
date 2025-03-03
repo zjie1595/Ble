@@ -7,7 +7,6 @@ import android.text.TextUtils;
 
 import com.blankj.utilcode.util.ConvertUtils;
 import com.blankj.utilcode.util.LogUtils;
-import com.blankj.utilcode.util.ToastUtils;
 import com.zj.ble.codec.DecodeUtil;
 import com.zj.ble.codec.EncodeUtil;
 import com.zj.ble.model.DecodeBean;
@@ -187,6 +186,50 @@ public class BleUtils {
         int send_num = buffer.capacity() / 20;
         byte[] data_send = new byte[20];
         buffer.position(0);
+        for (int i = 0; i < send_num; i++) {
+            buffer.get(data_send);
+            write(data_send);
+        }
+    }
+
+    /**
+     * 扫码
+     *
+     * @param welderType  焊机型号
+     * @param factoryNo   工厂编号
+     * @param barCodeData 条形码数据
+     * @param listener    监听
+     */
+    public static void scanCode(
+            String welderType,
+            String factoryNo,
+            String barCodeData,
+            CmdParseExecute.ScanBarCodeListener listener
+    ) {
+        CmdParseExecute.getINSTNCE().setScanBarCodeListener(listener);
+        int capacity = 20 + barCodeData.length();
+
+        ByteBuffer buffer1 = ByteBuffer.allocate(capacity);
+
+        buffer1.put(welderType.getBytes());
+        buffer1.put(factoryNo.getBytes());
+
+        for (int i = 0; i < (14 - factoryNo.length()); i++) {
+            buffer1.put((byte) 0x20);
+        }
+
+        buffer1.put(barCodeData.getBytes());
+
+        byte[] data = new byte[buffer1.capacity()];
+        buffer1.position(0);
+        buffer1.get(data);
+
+        ByteBuffer buffer = EncodeUtil.getINSTNCE().encode(data, (byte) 0x84);
+
+        int send_num = buffer.capacity() / 20;
+        byte[] data_send = new byte[20];
+        buffer.position(0);
+
         for (int i = 0; i < send_num; i++) {
             buffer.get(data_send);
             write(data_send);
